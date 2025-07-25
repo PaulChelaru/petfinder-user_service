@@ -1,0 +1,186 @@
+
+> user-service@1.0.0 start
+> node src/server.js
+
+{"level":"WARN","timestamp":"2025-06-26T11:33:44.501Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+[11:33:44 UTC] INFO: MongoDB connected
+[11:33:44 UTC] INFO: Kafka producer connected
+[11:33:44 UTC] INFO: Server listening at http://127.0.0.1:3002
+[11:36:05 UTC] INFO: incoming request
+    reqId: "d464c635-4f4f-488f-b9f9-8f75821fe934"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/health",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 50596
+    }
+[11:36:05 UTC] ERROR: {
+  name: 'Error',
+  message: 'Invalid credentials for this resource',
+  stack: 'Error: Invalid credentials for this resource\n' +
+    '    at Object.authenticate (file:///Users/pchelaru/Documents/Work/licenta/services/user_service/src/plugins/auth.js:52:15)\n' +
+    '    at hookIterator (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:405:10)\n' +
+    '    at next (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:239:18)\n' +
+    '    at hookRunner (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:261:5)\n' +
+    '    at validationCompleted (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:116:5)\n' +
+    '    at preValidationCallback (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:100:5)\n' +
+    '    at handler (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:77:7)\n' +
+    '    at handleRequest (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:24:5)\n' +
+    '    at runPreParsing (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/route.js:613:5)\n' +
+    '    at next (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:233:9)',
+  data: {},
+  status_code: 401,
+  code: 111010
+}
+    reqId: "d464c635-4f4f-488f-b9f9-8f75821fe934"
+[11:36:05 UTC] INFO: request completed
+    reqId: "d464c635-4f4f-488f-b9f9-8f75821fe934"
+    res: {
+      "statusCode": 401
+    }
+    responseTime: 2.8465000092983246
+{
+  uid: 'f90a03c2-5892-4c66-ac74-da3bc21500f2',
+  rol: 'user',
+  crt: 1750938217864,
+  iat: 1750938217
+}
+[11:43:37 UTC] INFO: incoming request
+    reqId: "97fbeea6-293a-4177-b8e8-3f4096169e6b"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 52506
+    }
+[11:43:37 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "97fbeea6-293a-4177-b8e8-3f4096169e6b"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    query: {}
+[11:43:37 UTC] INFO: request completed
+    reqId: "97fbeea6-293a-4177-b8e8-3f4096169e6b"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 7.082165986299515
+[11:43:37 UTC] INFO: incoming request
+    reqId: "a6b4ac9a-9290-4057-8b35-8e9d2375654a"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 52508
+    }
+[11:43:37 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "a6b4ac9a-9290-4057-8b35-8e9d2375654a"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    query: {}
+[11:43:37 UTC] INFO: request completed
+    reqId: "a6b4ac9a-9290-4057-8b35-8e9d2375654a"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 3.512499988079071
+{
+  uid: 'f90a03c2-5892-4c66-ac74-da3bc21500f2',
+  rol: 'user',
+  crt: 1750938217864,
+  iat: 1750938217
+}
+{"level":"ERROR","timestamp":"2025-06-26T11:43:51.280Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":5,"size":86}
+[11:43:51 UTC] INFO: incoming request
+    reqId: "3b6032b4-adb2-437b-b06c-0c6f60d9788b"
+    req: {
+      "method": "PUT",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 52569
+    }
+{"level":"ERROR","timestamp":"2025-06-26T11:43:51.625Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":6,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:43:52.254Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":7,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:43:53.441Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":8,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:43:55.892Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":9,"size":86}
+{
+  uid: 'f90a03c2-5892-4c66-ac74-da3bc21500f2',
+  rol: 'user',
+  crt: 1750938217864,
+  iat: 1750938217
+}
+{"level":"ERROR","timestamp":"2025-06-26T11:43:59.965Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":10,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:44:00.165Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":11,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:44:00.308Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":12,"size":86}
+[11:43:59 UTC] INFO: incoming request
+    reqId: "16f6fd79-a520-46dc-abaa-df6b81344775"
+    req: {
+      "method": "PUT",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 52605
+    }
+[11:44:00 UTC] ERROR: Failed to send Kafka message for user_updated
+    reqId: "3b6032b4-adb2-437b-b06c-0c6f60d9788b"
+[11:44:00 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "3b6032b4-adb2-437b-b06c-0c6f60d9788b"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    body: {
+      "firstName": "Paula",
+      "lastName": "Chelaru",
+      "username": "aaaa",
+      "email": "chelarupaul2@gmail.com",
+      "city": "Suceava",
+      "notifyByEmail": false,
+      "notifyBySms": false
+    }
+    query: {}
+[11:44:00 UTC] INFO: request completed
+    reqId: "3b6032b4-adb2-437b-b06c-0c6f60d9788b"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 8914.50866702199
+{"level":"ERROR","timestamp":"2025-06-26T11:44:00.986Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":13,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:44:02.323Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":14,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:44:04.946Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":15,"size":86}
+{"level":"ERROR","timestamp":"2025-06-26T11:44:09.378Z","logger":"kafkajs","message":"[Connection] Response Metadata(key: 3, version: 6)","broker":"localhost:9094","clientId":"user-service","error":"This server does not host this topic-partition","correlationId":16,"size":86}
+[11:44:09 UTC] ERROR: Failed to send Kafka message for user_updated
+    reqId: "16f6fd79-a520-46dc-abaa-df6b81344775"
+[11:44:09 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "16f6fd79-a520-46dc-abaa-df6b81344775"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    body: {
+      "firstName": "Paulaa",
+      "lastName": "Chelaru",
+      "username": "aaaa",
+      "email": "chelarupaul2@gmail.com",
+      "city": "Suceava",
+      "notifyByEmail": false,
+      "notifyBySms": false
+    }
+    query: {}
+[11:44:09 UTC] INFO: request completed
+    reqId: "16f6fd79-a520-46dc-abaa-df6b81344775"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 9424.820874989033

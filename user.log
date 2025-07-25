@@ -1,0 +1,18 @@
+
+> user-service@1.0.0 start
+> node src/server.js
+
+{"level":"WARN","timestamp":"2025-06-13T21:41:35.307Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+[21:41:35 UTC] INFO: MongoDB connected
+[21:41:35 UTC] INFO: Kafka producer connected
+Error: listen EADDRINUSE: address already in use 127.0.0.1:3002
+    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
+    at listenInCluster (node:net:1920:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2069:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:8) {
+  code: 'EADDRINUSE',
+  errno: -48,
+  syscall: 'listen',
+  address: '127.0.0.1',
+  port: 3002
+}
