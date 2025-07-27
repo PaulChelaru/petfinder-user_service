@@ -2,7 +2,6 @@
 "use strict";
 
 import usersRoutes from "./users.js";
-import statsRoutes from "./stats.js";
 
 /**
  * Registers the exposed routes in the fastify app
@@ -10,7 +9,6 @@ import statsRoutes from "./stats.js";
  */
 async function routesV1 (fastify) {
     fastify
-        .register(usersRoutes, {prefix: "/users"})
-        .register(statsRoutes, {prefix: "/statistics"});
+        .register(usersRoutes, {prefix: "/users"});
 }
 export default routesV1;

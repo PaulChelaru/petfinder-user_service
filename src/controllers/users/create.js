@@ -1,9 +1,6 @@
-import { createUser }              from "../../helpers/users.js";
-import { produceUserKafkaMessage } from "../../helpers/kafka.js";
+import { createUser } from "../../helpers/users.js";
 
 export default async function handler(req) {
     const user = await createUser(req.body);
-    await produceUserKafkaMessage(req, "user_created", user);
-
     return user.toObject();
 }

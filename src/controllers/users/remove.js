@@ -3,9 +3,6 @@ import {
     findUserById,
 } from "../../helpers/users.js";
 import {
-    produceUserKafkaMessage,
-} from "../../helpers/kafka.js";
-import {
     NotAuthorizedError,
     ResourceNotFoundError,
 } from "../../errors/client_errors.js";
@@ -24,5 +21,4 @@ export default async function handler(req) {
     }
 
     await deleteUser(id);
-    await produceUserKafkaMessage(req, "user_deleted", user);
 }
