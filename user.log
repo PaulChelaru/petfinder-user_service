@@ -2,17 +2,40 @@
 > user-service@1.0.0 start
 > node src/server.js
 
-{"level":"WARN","timestamp":"2025-06-13T21:41:35.307Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
-[21:41:35 UTC] INFO: MongoDB connected
-[21:41:35 UTC] INFO: Kafka producer connected
-Error: listen EADDRINUSE: address already in use 127.0.0.1:3002
-    at Server.setupListenHandle [as _listen2] (node:net:1872:16)
-    at listenInCluster (node:net:1920:12)
-    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2069:7)
-    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:109:8) {
-  code: 'EADDRINUSE',
-  errno: -48,
-  syscall: 'listen',
-  address: '127.0.0.1',
-  port: 3002
+{"level":"WARN","timestamp":"2025-08-08T17:53:32.077Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.084Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.085Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":0,"retryTime":304}
+[17:53:32 UTC] INFO: MongoDB connected
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.393Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.394Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":1,"retryTime":520}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.918Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:32.918Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":2,"retryTime":1058}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:33.979Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:33.979Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":3,"retryTime":1702}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:35.699Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:35.700Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":4,"retryTime":2930}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:38.638Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
+{"level":"ERROR","timestamp":"2025-08-08T17:53:38.641Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":5,"retryTime":4958}
+KafkaJSNonRetriableError
+  Caused by: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9094
+    at Socket.onError (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/kafkajs/src/network/connection.js:210:23)
+    ... 3 lines matching cause stack trace ...
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+  name: 'KafkaJSNumberOfRetriesExceeded',
+  retriable: false,
+  helpUrl: undefined,
+  retryCount: 5,
+  retryTime: 4958,
+  [cause]: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9094
+      at Socket.onError (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/kafkajs/src/network/connection.js:210:23)
+      at Socket.emit (node:events:514:28)
+      at emitErrorNT (node:internal/streams/destroy:151:8)
+      at emitErrorCloseNT (node:internal/streams/destroy:116:3)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
+    retriable: true,
+    helpUrl: undefined,
+    broker: 'localhost:9094',
+    code: 'ECONNREFUSED',
+    [cause]: undefined
+  }
 }
