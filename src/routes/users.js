@@ -3,8 +3,6 @@ import readController from "../controllers/users/read.js";
 import updateController from "../controllers/users/update.js";
 import removeController from "../controllers/users/remove.js";
 
-import {authenticateApiKey} from "../helpers/auth.js";
-
 async function usersRoutes(fastify) {
     fastify
         .addHook("preHandler", fastify.authenticate)
