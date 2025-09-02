@@ -1,6 +1,9 @@
 import User from "../models/User.js";
 
-import {ServerError} from "../errors/index.js";
+import {
+    ServerError,
+    DuplicateValueError,
+} from "../errors/index.js";
 
 /**
  * Creates a new user document in the database
@@ -12,7 +15,8 @@ import {ServerError} from "../errors/index.js";
 async function createUser(userData) {
     try {
         const user = new User(userData);
-        return await user.save();
+        const createdUser = await user.save();
+        return createdUser;
     } catch (error) {
         throw new ServerError(error);
     }
@@ -33,9 +37,7 @@ async function findUserById(userId) {
 }
 
 /**
- * Updates a user document with the provided data
- *
- * @async
+ * Updates a user in the database by their UUID
  * @param {string} userId - The UUID of the user to update
  * @param {Object} updateData - Object containing the fields to update
  * @returns {Promise<Object>} The updated user document as a plain JavaScript object
@@ -54,6 +56,9 @@ async function updateUser(userId, updateData) {
     try {
         return await User.findOneAndUpdate({ userId }, payload, options).lean();
     } catch (error) {
+        if (error.code === 11000) {
+            throw new DuplicateValueError("This value is already in use");
+        }
         throw new ServerError(error);
     }
 }

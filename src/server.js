@@ -32,7 +32,6 @@ async function build() {
     await app.register(import("./plugins/cors.js"));
     await app.register(import("./plugins/auth.js"));
     await app.register(import("./plugins/mongoose.js"));
-    await app.register(import("./plugins/kafka.js"));
 
     app.register(import("./routes/index.js"), { prefix: "/v1" });
 

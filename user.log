@@ -1,41 +1,95 @@
+npm warn Unknown user config "python". This will stop working in the next major version of npm.
+npm warn Unknown global config "python". This will stop working in the next major version of npm.
 
 > user-service@1.0.0 start
 > node src/server.js
 
-{"level":"WARN","timestamp":"2025-08-08T17:53:32.077Z","logger":"kafkajs","message":"KafkaJS v2.0.0 switched default partitioner. To retain the same partitioning behavior as in previous versions, create the producer with the option \"createPartitioner: Partitioners.LegacyPartitioner\". See the migration guide at https://kafka.js.org/docs/migration-guide-v2.0.0#producer-new-default-partitioner for details. Silence this warning by setting the environment variable \"KAFKAJS_NO_PARTITIONER_WARNING=1\""}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.084Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.085Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":0,"retryTime":304}
-[17:53:32 UTC] INFO: MongoDB connected
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.393Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.394Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":1,"retryTime":520}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.918Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:32.918Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":2,"retryTime":1058}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:33.979Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:33.979Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":3,"retryTime":1702}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:35.699Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:35.700Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":4,"retryTime":2930}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:38.638Z","logger":"kafkajs","message":"[Connection] Connection error: connect ECONNREFUSED 127.0.0.1:9094","broker":"localhost:9094","clientId":"user-service","stack":"Error: connect ECONNREFUSED 127.0.0.1:9094\n    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1595:16)"}
-{"level":"ERROR","timestamp":"2025-08-08T17:53:38.641Z","logger":"kafkajs","message":"[BrokerPool] Failed to connect to seed broker, trying another broker from the list: Connection error: connect ECONNREFUSED 127.0.0.1:9094","retryCount":5,"retryTime":4958}
-KafkaJSNonRetriableError
-  Caused by: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9094
-    at Socket.onError (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/kafkajs/src/network/connection.js:210:23)
-    ... 3 lines matching cause stack trace ...
-    at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
-  name: 'KafkaJSNumberOfRetriesExceeded',
-  retriable: false,
-  helpUrl: undefined,
-  retryCount: 5,
-  retryTime: 4958,
-  [cause]: KafkaJSConnectionError: Connection error: connect ECONNREFUSED 127.0.0.1:9094
-      at Socket.onError (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/kafkajs/src/network/connection.js:210:23)
-      at Socket.emit (node:events:514:28)
-      at emitErrorNT (node:internal/streams/destroy:151:8)
-      at emitErrorCloseNT (node:internal/streams/destroy:116:3)
-      at process.processTicksAndRejections (node:internal/process/task_queues:82:21) {
-    retriable: true,
-    helpUrl: undefined,
-    broker: 'localhost:9094',
-    code: 'ECONNREFUSED',
-    [cause]: undefined
-  }
+[12:37:06 UTC] INFO: MongoDB connected
+[12:37:06 UTC] INFO: Server listening at http://127.0.0.1:3002
+[12:37:21 UTC] INFO: incoming request
+    reqId: "e5fc9435-ceb2-4c35-9ba1-db9dfc421e06"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/test",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 62981
+    }
+[12:37:21 UTC] ERROR: {
+  name: 'Error',
+  message: 'Invalid credentials for this resource',
+  stack: 'Error: Invalid credentials for this resource\n' +
+    '    at Object.authenticate (file:///Users/pchelaru/Documents/Work/licenta/services/user_service/src/plugins/auth.js:52:15)\n' +
+    '    at hookIterator (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:405:10)\n' +
+    '    at next (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:239:18)\n' +
+    '    at hookRunner (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:261:5)\n' +
+    '    at validationCompleted (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:116:5)\n' +
+    '    at preValidationCallback (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:100:5)\n' +
+    '    at handler (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:77:7)\n' +
+    '    at handleRequest (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/handleRequest.js:24:5)\n' +
+    '    at runPreParsing (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/route.js:613:5)\n' +
+    '    at next (/Users/pchelaru/Documents/Work/licenta/services/user_service/node_modules/fastify/lib/hooks.js:233:9)',
+  data: {},
+  status_code: 401,
+  code: 111010
 }
+    reqId: "e5fc9435-ceb2-4c35-9ba1-db9dfc421e06"
+[12:37:21 UTC] INFO: request completed
+    reqId: "e5fc9435-ceb2-4c35-9ba1-db9dfc421e06"
+    res: {
+      "statusCode": 401
+    }
+    responseTime: 3.6101250052452087
+{
+  uid: 'f90a03c2-5892-4c66-ac74-da3bc21500f2',
+  rol: 'user',
+  crt: 1756730500994,
+  iat: 1756730500,
+  exp: 1756816900
+}
+[12:41:40 UTC] INFO: incoming request
+    reqId: "d7fe346f-8e2f-4cc0-aa99-ecd8cb261f17"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 64078
+    }
+[12:41:40 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "d7fe346f-8e2f-4cc0-aa99-ecd8cb261f17"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    query: {}
+[12:41:40 UTC] INFO: request completed
+    reqId: "d7fe346f-8e2f-4cc0-aa99-ecd8cb261f17"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 8.314916998147964
+[12:41:41 UTC] INFO: incoming request
+    reqId: "55f88688-b059-4a66-9e7b-f22f411e353c"
+    req: {
+      "method": "GET",
+      "url": "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2",
+      "hostname": "localhost:3002",
+      "remoteAddress": "127.0.0.1",
+      "remotePort": 64079
+    }
+[12:41:41 UTC] INFO: Logging activity on url /v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2, IP 127.0.0.1
+    reqId: "55f88688-b059-4a66-9e7b-f22f411e353c"
+    url: "/v1/users/f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    route: "/v1/users/:id"
+    params: {
+      "id": "f90a03c2-5892-4c66-ac74-da3bc21500f2"
+    }
+    query: {}
+[12:41:41 UTC] INFO: request completed
+    reqId: "55f88688-b059-4a66-9e7b-f22f411e353c"
+    res: {
+      "statusCode": 200
+    }
+    responseTime: 3.3539170026779175
